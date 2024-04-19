@@ -29,13 +29,13 @@
 
         .header h1 {
             margin: 0;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: bold;
         }
 
         .header p.subtitle {
             margin-top: 5px;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .nav {
@@ -56,13 +56,13 @@
         .nav-item a {
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         .section-title {
             color: #1a5276;
             margin-top: 40px;
-            font-size: 24px;
+            font-size: 20px;
             text-align: center;
         }
 
@@ -80,7 +80,7 @@
         label {
             font-weight: bold;
             color: #333;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         input[type="text"],
@@ -90,12 +90,12 @@
         input[type="file"],
         input[type="submit"] {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
             resize: none;
-            font-size: 16px;
+            font-size: 14px;
             font-family: Arial, sans-serif;
         }
 
@@ -105,9 +105,9 @@
             color: #fff;
             border: none;
             border-radius: 4px;
-            padding: 14px 20px;
+            padding: 10px 16px;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover,
@@ -125,7 +125,39 @@
 
         .footer p {
             margin: 0;
-            font-size: 16px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 12px; /* Reduzindo o tamanho da fonte */
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 6px; /* Reduzindo o padding */
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 14px; /* Tamanho da fonte dos cabeçalhos */
+            font-weight: bold; /* Realçando a negrito */
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+
+        .editable {
+            background-color: #ffffff;
         }
     </style>
 </head>
@@ -160,20 +192,24 @@
                     <input type="date" id="data_prevista_parto" name="data_prevista_parto" required>
                 </div>
                 <div class="form-group">
-                    <label for="rh">RH:</label>
-                    <input type="text" id="rh" name="rh" required>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
                 </div>
                 <div class="form-group">
-                    <label for="toxoplasmose">Toxoplasmose:</label>
-                    <input type="text" id="toxoplasmose" name="toxoplasmose" required>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" required>
                 </div>
                 <div class="form-group">
-                    <label for="suab">SUAB:</label>
-                    <input type="text" id="suab" name="suab" required>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
                 </div>
                 <div class="form-group">
-                    <label for="laqueadura">Laqueadura:</label>
-                    <input type="text" id="laqueadura" name="laqueadura" required>
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" required>
                 </div>
                 <input type="submit" value="Cadastrar" class="btn-submit">
             </form>
@@ -203,6 +239,90 @@
                 <input type="submit" value="Registrar" class="btn-submit">
             </form>
         </div>
+    </section>
+
+    <section id="cronograma" class="section">
+        <h2 class="section-title">Cronograma Pré-Natal</h2>
+        <table>
+            <tr>
+                <th>Semana</th>
+                <th>Abertura do Pré-Natal</th>
+                <th>Consultas</th>
+                <th>Avaliação odontológica</th>
+                <th>Exames laboratoriais</th>
+                <th>Sorologias e Teste rápido</th>
+                <th>Exames Radiológicos</th>
+                <th>Toxoplasmose</th>
+                <th>SUAB</th>
+                <th>Laqueadura</th>
+                <th>Vacinas</th>
+            </tr>
+            <tr>
+                <td>Até 6 semanas</td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+            </tr>
+            <tr>
+                <td>Até 12 semanas</td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+            </tr>
+            <tr>
+                <td>Até 18 semanas</td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+            </tr>
+            <tr>
+                <td>Até 24 semanas</td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+            </tr>
+            <tr>
+                <td>Até 36 semanas</td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+                <td contenteditable="true" class="editable"></td>
+            </tr>
+                </table>
     </section>
 
     <footer class="footer">
