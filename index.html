@@ -184,12 +184,20 @@
                     <input type="text" id="nome" name="nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="idade">Idade:</label>
-                    <input type="number" id="idade" name="idade" required>
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" id="data_nascimento" name="data_nascimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome_mae">Nome da Mãe:</label>
+                    <input type="text" id="nome_mae" name="nome_mae" required>
                 </div>
                 <div class="form-group">
                     <label for="data_prevista_parto">Data Prevista de Parto:</label>
                     <input type="date" id="data_prevista_parto" name="data_prevista_parto" required>
+                </div>
+                <div class="form-group">
+                    <label for="ultima_menstruacao">Última Menstruação:</label>
+                    <input type="date" id="ultima_menstruacao" name="ultima_menstruacao" required>
                 </div>
                 <div class="form-group">
                     <label for="endereco">Endereço:</label>
@@ -211,7 +219,6 @@
                     <label for="telefone">Telefone:</label>
                     <input type="text" id="telefone" name="telefone" required>
                 </div>
-                <input type="submit" value="Cadastrar" class="btn-submit">
             </form>
         </div>
     </section>
@@ -236,7 +243,6 @@
                     <label for="arquivo_exame">Anexar Exame:</label>
                     <input type="file" id="arquivo_exame" name="arquivo_exame" required>
                 </div>
-                <input type="submit" value="Registrar" class="btn-submit">
             </form>
         </div>
     </section>
@@ -269,64 +275,68 @@
                 <td contenteditable="true" class="editable"></td>
                 <td contenteditable="true" class="editable"></td>
                 <td contenteditable="true" class="editable"></td>
-            </tr>
-            <tr>
-                <td>Até 12 semanas</td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-            </tr>
-            <tr>
-                <td>Até 18 semanas</td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-            </tr>
-            <tr>
-                <td>Até 24 semanas</td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-            </tr>
-            <tr>
-                <td>Até 36 semanas</td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-                <td contenteditable="true" class="editable"></td>
-            </tr>
-                </table>
+         </tr>
+    </tr>
+
+       <td>Até 12 semanas</td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+   </tr>
+   <tr>
+       <td>Até 18 semanas</td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+   </tr>
+   <tr>
+       <td>Até 24 semanas</td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+   </tr>
+   <tr>
+       <td>Até 36 semanas</td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+       <td contenteditable="true" class="editable"></td>
+   </tr>
+        </table>
     </section>
 
     <footer class="footer">
         <div class="container">
+            <form action="/submit_all" method="post" class="form">
+                <input type="submit" value="REGISTRAR" class="btn-submit">
+            </form>
             <p>&copy; 2024 Rede Cegonha. Todos os direitos reservados.</p>
         </div>
     </footer>
