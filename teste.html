@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Gestantes - Rede Cegonha</title>
+    <style>
+        /* Seu CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #1a5276;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .header p.subtitle {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        .nav {
+            margin-top: 20px;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .nav-item a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .section-title {
+            color: #1a5276;
+            margin-top: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        textarea,
+        input[type="file"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="submit"],
+        .btn-submit {
+            background-color: #1a5276;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover,
+        .btn-submit:hover {
+            background-color: #0e3040;
+        }
+
+        .footer {
+            background-color: #1a5276;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 6px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        tr:hover {
+            background-color: #e6e6e6;
+        }
+
+        .editable {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Rede Cegonha</h1>
+            <p class="subtitle">Voando na Cidade de Suzano</p>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#cadastro">Cadastro</a></li>
+                    <li class="nav-item"><a href="#exames">Exames</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="cadastro" class="section">
+        <div class="container">
+            <h2 class="section-title">Cadastro de Gestantes</h2>
+            <form action="/submit" method="post" class="form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="data_nascimento">Data de Nascimento:</label>
+                    <input type="date" id="data_nascimento" name="data_nascimento" required 
+
+onchange="calculateAge()">
+                </div>
+                <div class="form-group">
+                    <label for="idade">Idade:</label>
+                    <input type="text" id="idade" name="idade" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="nome_mae">Nome da Mãe:</label>
+                    <input type="text" id="nome_mae" name="nome_mae" required>
+                </div>
+                <div class="form-group">
+                    <label for="data_prevista_parto">Data Prevista de Parto:</label>
+                    <input type="date" id="data_prevista_parto" name="data_prevista_parto" required>
+                </div>
+                <div class="form-group">
+                    <label for="ultima_menstruacao">Última Menstruação:</label>
+                    <input type="date" id="ultima_menstruacao" name="ultima_menstruacao" required>
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" name="cep" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" required>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="cronograma" class="section">
+        <h2 class="section-title">Cronograma Pré-Natal</h2>
+        <table id="cronograma-table">
+            <tr>
+                <th>Semana</th>
+                <th>Abertura do Pré-Natal</th>
+                <th>Consultas</th>
+                <th>Avaliação odontológica</th>
+                <th>Exames laboratoriais</th>
+                <th>Sorologias e Teste rápido</th>
+                <th>Exames Radiológicos</th>
+                <th>Toxoplasmose</th>
+                <th>SUAB</th>
+                <th>Laqueadura</th>
+                <th>Vacinas</th>
+            </tr>
+            <tr>
+                <td>Até 6 semanas</td>
+                <td>Assim que descobre a gravidez</td>
+                <td>Assim que descobre a gravidez</td>
+                <td>Assim que descobre a gravidez</td>
+                <td>Assim que descobre a gravidez</td>
+                <td>Assim que descobre a gravidez</td>
+                <td>Assim que descobre a gravidez</td>
+                <td></td>
+                <td>Agendar 1ª reunião na abertura do PN</td>
+                <td></td>
+                <td>Na abertura do pré-natal</td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </table>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <form action="/submit_all" method="post" class="form">
+                <input type="submit" value="REGISTRAR" class="btn-submit">
+            </form>
+            <p>&copy; 2024 Rede Cegonha. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateAge() {
+            var dob = document.getElementById('data_nascimento').value;
+            var today = new Date();
+            var birthDate = new Date(dob);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            document.getElementById('idade').value = age;
+        }
+
+        document.getElementById('ultima_menstruacao').addEventListener('change', function() {
+            // Limpar a tabela antes de preencher novamente
+            document.getElementById('cronograma-table').innerHTML = `
+                <tr>
+                    <th>Semana</th>
+                    <th>Abertura do Pré-Natal</th>
+                    <th>Consultas</th>
+                    <th>Avaliação odontológica</th>
+                    <th>Exames laboratoriais</th>
+                    <th>Sorologias e Teste rápido</th>
+                    <th>Exames Radiológicos</th>
+                    <th>Toxoplasmose</th>
+                    <th>SUAB</th>
+                    <th>Laqueadura</th>
+                    <th>Vacinas</th>
+                </tr>
+            `;
+            // Adicionar lógica para preencher a tabela com base na data da última menstruação
+            var dataUltimaMenstruacao = new Date(this.value);
+            var semanas = [6, 12, 18, 24, 36];
+            semanas.forEach(function(semana) {
+                if (semana >= 6) {
+                    var dataSemana = new Date(dataUltimaMenstruacao);
+                    dataSemana.setDate(dataSemana.getDate() + (7 * semana)); // Calcular a data da semana 
+
+correspondente
+                    var row = document.getElementById('cronograma-table').insertRow(-1); // Inserir uma 
+
+nova linha na tabela
+                    row.insertCell(0).innerHTML = 'Até ' + semana + ' semanas'; // Preencher a coluna 
+
+'Semana'
+                    if (semana === 6) {
+                        row.insertCell(1).innerHTML = 'Assim que descobre a gravidez'; // Preencher a 
+
+coluna 'Abertura do Pré-Natal'
+                        row.insertCell(2).innerHTML = 'Assim que descobre a gravidez'; // Preencher a 
+
+coluna 'Consultas'
+                        row.insertCell(3).innerHTML = 'Assim que descobre a gravidez'; // Preencher a 
+
+coluna 'Avaliação odontológica'
+                        row.insertCell(4).innerHTML = 'Assim que descobre a gravidez'; // Preencher a 
+
+coluna 'Exames laboratoriais'
+                        row.insertCell(5).innerHTML = 'Assim que descobre a gravidez'; // Preencher a 
+
+coluna 'Sorologias e Teste rápido'
+                        row.insertCell(6).innerHTML = 'Assim que descobre a gravidez'; // Preencher a 
+
+coluna 'Exames Radiológicos'
+                        row.insertCell(9).innerHTML = 'Agendar 1ª reunião na abertura do PN'; // Preencher 
+
+a coluna 'SUAB'
+                        row.insertCell(11).innerHTML = 'Na abertura do pré-natal'; // Preencher a coluna 
+
+'Vacinas'
+                    } else {
+                        // Adicione mais lógica conforme necessário para outras semanas
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
