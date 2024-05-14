@@ -14,5 +14,9 @@ def submit():
     else:
         return render_template('success.html')
 
+@app.route('/submit_all', methods=['POST'])
+def submit_all():
+    return render_template('success.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
