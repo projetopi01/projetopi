@@ -11,14 +11,12 @@
             color: #333;
             margin: 0;
             padding: 0;
-            text-align: center; /* Centraliza todo o conteúdo */
         }
 
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            text-align: left; /* Alinha o conteúdo do container à esquerda */
         }
 
         .header {
@@ -26,7 +24,6 @@
             color: #fff;
             padding: 20px;
             text-align: center;
-            margin-bottom: 20px; /* Adiciona espaço abaixo do cabeçalho */
         }
 
         .header h1 {
@@ -66,20 +63,19 @@
             margin-top: 40px;
             font-size: 20px;
             text-align: center;
-            margin-bottom: 20px; /* Adiciona espaço abaixo do título da seção */
         }
 
         table {
-            width: 100%; /* Alterado para ocupar 100% da largura do container */
-            margin-top: 20px;
+            width: 90%;
+            margin: 20px auto;
             border-collapse: collapse;
             font-size: 14px;
-            text-align: center; /* Centraliza o conteúdo da tabela */
         }
 
         th, td {
             border: 1px solid #dddddd;
             padding: 10px;
+            text-align: center;
         }
 
         th {
@@ -97,6 +93,23 @@
             background-color: #e6e6e6;
         }
 
+        .editable {
+            background-color: #ffffff;
+        }
+
+        /* Estilos para destacar as células */
+        td.pending {
+            background-color: #ffcccb; /* Vermelho claro para procedimentos pendentes */
+        }
+
+        td.completed {
+            background-color: #90ee90; /* Verde claro para procedimentos concluídos */
+        }
+
+        td.upcoming {
+            background-color: #add8e6; /* Azul claro para procedimentos futuros */
+        }
+
         .footer {
             background-color: #1a5276;
             color: #fff;
@@ -105,7 +118,7 @@
             margin-top: 20px;
         }
 
-        .btn-search {
+        .btn-submit {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -114,18 +127,12 @@
             cursor: pointer;
         }
 
-        .btn-search:hover {
+        .btn-submit:hover {
             background-color: #0056b3;
-        }
-
-        /* Posicionamento do campo CPF */
-        #cpf_busca {
-            width: 150px;
-            float: right;
         }
     </style>
 </head>
-<body onload="calcularSemanas()">
+<body>
     <header class="header">
         <div class="container">
             <h1 class="logo">Rede Cegonha</h1>
@@ -133,7 +140,6 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="#cadastro">Cadastro</a></li>
-                    <li class="nav-item"><a href="#buscar">Buscar</a></li>
                 </ul>
             </nav>
         </div>
@@ -144,16 +150,14 @@
             <h2 class="section-title">Cadastro de Gestantes</h2>
             <form action="/submit" method="post" class="form">
                 <div class="form-group">
-                    <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" required>
-                </div>
-                <div class="form-group">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
                 </div>
                 <div class="form-group">
                     <label for="data_nascimento">Data de Nascimento:</label>
-                    <input type="date" id="data_nascimento" name="data_nascimento" required onchange="calculateAge()">
+                    <input type="date" id="data_nascimento" name="data_nascimento" required 
+
+onchange="calculateAge()">
                 </div>
                 <div class="form-group">
                     <label for="idade">Idade:</label>
@@ -196,19 +200,6 @@
         </div>
     </section>
 
-    <section id="buscar" class="section">
-        <div class="container">
-            <h2 class="section-title">Buscar Cadastro por CPF</h2>
-            <form action="/buscar" method="get" class="form">
-                <div class="form-group">
-                    <label for="cpf_busca">Digite o CPF:</label>
-                    <input type="text" id="cpf_busca" name="cpf_busca" required>
-                </div>
-                <input type="submit" value="BUSCAR" class="btn-search">
-            </form>
-        </div>
-    </section>
-
     <section id="cronograma" class="section">
         <div class="container">
             <h2 class="section-title">Cronograma Pré-Natal</h2>
@@ -225,9 +216,9 @@
                     <th>SUAB</th>
                     <th>Laqueadura</th>
                     <th>Vacinas</th>
+            
                </tr>
                 <tr>
-               
                     <td>Ate 6 semanas</td>
                     <td contenteditable="true" class="editable pending">Assim que descobre a gravidez</td>
                     <td contenteditable="true" class="editable upcoming">Assim que descobre a gravidez</td>
@@ -429,17 +420,17 @@
             }
             document.getElementById('idade').value = age;
         }
-
-        function calcularSemanas() {
-            var lastMenstruation = document.getElementById('ultima_menstruacao').value;
-            var today = new Date();
-            var lastMenstruationDate = new Date(lastMenstruation);
-            var differenceInTime = today.getTime() - lastMenstruationDate.getTime();
-            var differenceInWeeks = Math.floor(differenceInTime / (1000 * 3600 * 24 * 7));
-            alert("A gestante está aproximadamente " + differenceInWeeks + " semanas de gestação.");
-        }
-
-        window.onload = calcularSemanas;
     </script>
+<script>
+    function calcularSemanas() {
+        var lastMenstruation = document.getElementById('ultima_menstruacao').value;
+        var today = new Date();
+        var lastMenstruationDate = new Date(lastMenstruation);
+        var differenceInTime = today.getTime() - lastMenstruationDate.getTime();
+        var differenceInWeeks = Math.floor(differenceInTime / (1000 * 3600 * 24 * 7));
+        alert("A gestante está aproximadamente " + differenceInWeeks + " semanas de gestação.");
+    }
+</script>
+
 </body>
 </html>
