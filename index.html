@@ -407,17 +407,26 @@
     </footer>
 
     <script>
-        function calculateAge() {
-            var dob = document.getElementById('data_nascimento').value;
-            var today = new Date();
-            var birthDate = new Date(dob);
-            var age = today.getFullYear() - birthDate.getFullYear();
-            var m = today.getMonth() - birthDate.getMonth();
-            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                age--;
-            }
-            document.getElementById('idade').value = age;
+    function calculateAge() {
+        var dob = document.getElementById('data_nascimento').value;
+        var today = new Date();
+        var birthDate = new Date(dob);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
         }
-    </script>
+        document.getElementById('idade').value = age;
+    }
+
+    function calcularSemanas() {
+        var lastMenstruation = document.getElementById('ultima_menstruacao').value;
+        var today = new Date();
+        var lastMenstruationDate = new Date(lastMenstruation);
+        var differenceInTime = today.getTime() - lastMenstruationDate.getTime();
+        var differenceInWeeks = Math.floor(differenceInTime / (1000 * 3600 * 24 * 7));
+        alert("A gestante está aproximadamente " + differenceInWeeks + " semanas de gestação.");
+    }
+</script>
 </body>
 </html>
