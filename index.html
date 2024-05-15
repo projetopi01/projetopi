@@ -11,21 +11,22 @@
             color: #333;
             margin: 0;
             padding: 0;
+            text-align: center; /* Centraliza todo o conteúdo */
         }
 
         .container {
-            max-width: 600px; /* Diminui o tamanho da tela */
+            max-width: 600px;
             margin: 0 auto;
             padding: 20px;
+            text-align: left; /* Alinha o conteúdo do container à esquerda */
         }
-
-       }
 
         .header {
             background-color: #1a5276;
             color: #fff;
             padding: 20px;
             text-align: center;
+            margin-bottom: 20px; /* Adiciona espaço abaixo do cabeçalho */
         }
 
         .header h1 {
@@ -65,19 +66,20 @@
             margin-top: 40px;
             font-size: 20px;
             text-align: center;
+            margin-bottom: 20px; /* Adiciona espaço abaixo do título da seção */
         }
 
         table {
-            width: 90%;
-            margin: 20px auto;
+            width: 100%; /* Alterado para ocupar 100% da largura do container */
+            margin-top: 20px;
             border-collapse: collapse;
             font-size: 14px;
+            text-align: center; /* Centraliza o conteúdo da tabela */
         }
 
         th, td {
             border: 1px solid #dddddd;
             padding: 10px;
-            text-align: center;
         }
 
         th {
@@ -93,23 +95,6 @@
 
         tr:hover {
             background-color: #e6e6e6;
-        }
-
-        .editable {
-            background-color: #ffffff;
-        }
-
-        /* Estilos para destacar as células */
-        td.pending {
-            background-color: #ffcccb; /* Vermelho claro para procedimentos pendentes */
-        }
-
-        td.completed {
-            background-color: #90ee90; /* Verde claro para procedimentos concluídos */
-        }
-
-        td.upcoming {
-            background-color: #add8e6; /* Azul claro para procedimentos futuros */
         }
 
         .footer {
@@ -135,12 +120,12 @@
 
         /* Posicionamento do campo CPF */
         #cpf_busca {
-            width: 150px; /* Define a largura do campo CPF */
-            float: right; /* Alinha o campo CPF à direita */
+            width: 150px;
+            float: right;
         }
     </style>
 </head>
-<body>
+<body onload="calcularSemanas()">
     <header class="header">
         <div class="container">
             <h1 class="logo">Rede Cegonha</h1>
@@ -240,9 +225,9 @@
                     <th>SUAB</th>
                     <th>Laqueadura</th>
                     <th>Vacinas</th>
-            
                </tr>
                 <tr>
+               
                     <td>Ate 6 semanas</td>
                     <td contenteditable="true" class="editable pending">Assim que descobre a gravidez</td>
                     <td contenteditable="true" class="editable upcoming">Assim que descobre a gravidez</td>
@@ -422,7 +407,6 @@
                     <td contenteditable="true" class="editable upcoming">Avaliacao medica e psicossocial</td>
                     <td contenteditable="true" class="editable upcoming"></td>
                 </tr>
-            
             </table>
         </div>
     </section>
@@ -454,6 +438,8 @@
             var differenceInWeeks = Math.floor(differenceInTime / (1000 * 3600 * 24 * 7));
             alert("A gestante está aproximadamente " + differenceInWeeks + " semanas de gestação.");
         }
+
+        window.onload = calcularSemanas;
     </script>
 </body>
 </html>
