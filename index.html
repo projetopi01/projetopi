@@ -6,7 +6,7 @@
     <title>Cadastro de Gestantes - Rede Cegonha</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f9f9f9;
             color: #333;
             margin: 0;
@@ -30,11 +30,13 @@
             margin: 0;
             font-size: 32px;
             font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .header p.subtitle {
             margin-top: 5px;
             font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .nav {
@@ -56,6 +58,7 @@
             color: #fff;
             text-decoration: none;
             font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .section-title {
@@ -63,26 +66,30 @@
             margin-top: 40px;
             font-size: 20px;
             text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         table {
-            width: 90%;
+            width: 100%;
             margin: 20px auto;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 12px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         th, td {
             border: 1px solid #dddddd;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         th {
             background-color: #007bff;
             color: #ffffff;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         tr:nth-child(even) {
@@ -125,10 +132,36 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .btn-submit:hover {
             background-color: #0056b3;
+        }
+
+        /* Estilos para o formulário de cadastro */
+        .form {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-group input {
+            width: calc(100% - 10px);
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     </style>
 </head>
@@ -216,7 +249,8 @@
                     <th>Vacinas</th>
             
                </tr>
-                <tr>
+               </tr>
+              
                     <td>Ate 6 semanas</td>
                     <td contenteditable="true" class="editable pending">Assim que descobre a gravidez</td>
                     <td contenteditable="true" class="editable upcoming">Assim que descobre a gravidez</td>
