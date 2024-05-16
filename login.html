@@ -92,5 +92,22 @@
             </div>
         </form>
     </div>
+
+    <!-- Script de redirecionamento após o login -->
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(event) {
+            // Simulando o sucesso do login
+            // Aqui você pode adicionar a lógica para verificar o login com o servidor
+            var loginSuccessful = true;
+
+            // Se o login for bem-sucedido, redirecione para a página principal
+            if (loginSuccessful) {
+                window.location.href = "index.html";
+            }
+
+            // Impedir o envio do formulário
+            event.preventDefault();
+        });
+    </script>
 </body>
 </html>
