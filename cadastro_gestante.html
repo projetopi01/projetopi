@@ -104,17 +104,17 @@
             background-color: #ffffff;
         }
 
-        /* Estilos para destacar as células */
+        
         td.pending {
-            background-color: #ffcccb; /* Vermelho claro para procedimentos pendentes */
+            background-color: #ffcccb;
         }
 
         td.completed {
-            background-color: #90ee90; /* Verde claro para procedimentos concluídos */
+            background-color: #90ee90; 
         }
 
         td.upcoming {
-            background-color: #add8e6; /* Azul claro para procedimentos futuros */
+            background-color: #add8e6;
         }
 
         .footer {
@@ -139,7 +139,7 @@
             background-color: #0056b3;
         }
 
-        /* Estilos para o formulário de cadastro */
+       
         .form {
             text-align: center;
         }
@@ -242,7 +242,18 @@
             </form>
         </div>
     </section>
-
+    <section id="calcular-semanas" class="section">
+        <div class="container">
+            <h2 class="section-title">Calcular Semanas de Gestação</h2>
+            <form onsubmit="return false;">
+                <div class="form-group">
+                    <label for="ultima_menstruacao">Última Menstruação:</label>
+                    <input type="date" id="ultima_menstruacao" name="ultima_menstruacao" required>
+                </div>
+                <button onclick="calcularSemanas()">Calcular Semanas</button>
+            </form>
+        </div>
+    </section>
     <section id="cronograma" class="section">
         <div class="container">
             <h2 class="section-title">Cronograma Pré-Natal</h2>
@@ -472,6 +483,27 @@
             var differenceInWeeks = Math.floor(differenceInTime / (1000 * 3600 * 24 * 7));
             alert("A gestante está aproximadamente " + differenceInWeeks + " semanas de gestação.");
         }
+        window.onload = function() {
+            var cells = document.querySelectorAll(".editable");
+
+            
+            cells.forEach(function(cell) {
+                cell.addEventListener("click", function() {
+                    
+                    if (cell.classList.contains("pending")) {
+                        cell.classList.remove("pending");
+                        cell.classList.add("completed");
+                    } else if (cell.classList.contains("completed")) {
+                        cell.classList.remove("completed");
+                        cell.classList.add("upcoming");
+                    } else if (cell.classList.contains("upcoming")) {
+                        cell.classList.remove("upcoming");
+                        cell.classList.add("pending");
+                    }
+                });
+            });
+        };
+    
     </script>
 </body>
 </html>
