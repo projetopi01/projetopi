@@ -1,3 +1,4 @@
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -78,7 +79,7 @@
 <body>
     <div class="container">
         <h2 class="section-title">Página de Login</h2>
-        <form action="/login" method="post" class="login-form">
+        <form action="/submit_login" method="post" class="login-form">
             <div class="login-form-group">
                 <label for="username" class="login-label">Usuário:</label>
                 <input type="text" id="username" name="username" class="login-input" required>
@@ -87,27 +88,8 @@
                 <label for="password" class="login-label">Senha:</label>
                 <input type="password" id="password" name="password" class="login-input" required>
             </div>
-            <div class="login-form-group">
-                <input type="submit" value="Login" class="login-submit">
-            </div>
+            <button type="submit" class="login-submit">Entrar</button>
         </form>
     </div>
-
-    <!-- Script de redirecionamento após o login -->
-    <script>
-        document.querySelector('.login-form').addEventListener('submit', function(event) {
-            // Simulando o sucesso do login
-            // Aqui você pode adicionar a lógica para verificar o login com o servidor
-            var loginSuccessful = true;
-
-            // Se o login for bem-sucedido, redirecione para a página principal
-            if (loginSuccessful) {
-                window.location.href = "index.html";
-            }
-
-            // Impedir o envio do formulário
-            event.preventDefault();
-        });
-    </script>
 </body>
 </html>
