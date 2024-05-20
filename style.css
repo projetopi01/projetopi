@@ -90,17 +90,17 @@ tr:hover {
     background-color: #ffffff;
 }
 
-/* Estilos para destacar as células */
+
 td.pending {
-    background-color: #ffcccb; /* Vermelho claro para procedimentos pendentes */
+    background-color: #ffcccb; 
 }
 
 td.completed {
-    background-color: #90ee90; /* Verde claro para procedimentos concluídos */
+    background-color: #90ee90; 
 }
 
 td.upcoming {
-    background-color: #add8e6; /* Azul claro para procedimentos futuros */
+    background-color: #add8e6; 
 }
 
 .footer {
@@ -124,7 +124,7 @@ td.upcoming {
     background-color: #0056b3;
 }
 
-/* Estilos para o formulário de cadastro */
+
 .form {
     text-align: center;
 }
@@ -145,4 +145,9 @@ td.upcoming {
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+
+.exame-antigo {
+    background-color: #ffcccc;
 }
