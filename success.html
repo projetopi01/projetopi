@@ -1,25 +1,52 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sucesso!</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    </head>
-    <body>
-        <div class="container">
-            <header>
-                <h1>Rede de Saúde Municipal</h1>
-                <h2>Cadastro de Gestantes</h2>
-                <p class="subtitle">Rede Cegonha Voando na cidade de Suzano</p>
-            </header>
 
-            <h3>Formulário Enviado com Sucesso!</h3>
-            <p class="success">O formulário foi enviado com sucesso. Obrigado{{ nome }}!</p>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucesso - Rede Cegonha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .success-message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        .success-title {
+            color: #1a5276;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .success-text {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-message">
+            <h2 class="success-title">Cadastro realizado com sucesso!</h2>
+            <p class="success-text">O usuário <strong>{{ nome }}</strong> foi cadastrado.</p>
         </div>
-
-        <footer>
-            2024 Rede de Saúde Municipal. Todos os direitos reservados.
-        </footer>
-    </body>
-    </html>
+    </div>
+</body>
+</html>
